@@ -1,0 +1,72 @@
+{
+    "theme": {},
+    "home": {
+      "logo": "cdn link",
+      "footer": {
+        "enabled": false,
+        "quickLinks": [
+          {
+            "id": "string",
+            "logo": "cdn link",
+            "page": "page url"
+          }
+        ]
+      }
+    },
+    "categories": [
+      {
+        "id": "string",
+        "name": "food"
+      }
+    ],
+    "pages": [
+      {
+        "id": "string",
+        "category": "categoryId",
+        "title": "Hot dog",
+        "description": "The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich",
+        "articles": [
+          "articleId0",
+          "articleId1"
+        ],
+        "style": {}
+      }
+    ],
+    "articles": [
+      {
+        "id": "string",
+        "title": "History",
+        "content": [
+          {
+            "id": "string",
+            "widget": "widgetId",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "data": {
+              "text": "The word 'frankfurter' comes from Frankfurt, Germany, where pork sausages similar to hot dogs originated."
+            }
+          }
+        ],
+        "style": {}
+      }
+    ],
+    "widgets": [
+      {
+        "id": "string",
+        "type": "table",
+        "data": {}
+      },
+      {
+        "id": "string",
+        "type": "code-block",
+        "data": {}
+      },
+      {
+        "id": "string",
+        "type": "text-block",
+        "data": {}
+      }
+    ]
+  }
