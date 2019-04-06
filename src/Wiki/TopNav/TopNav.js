@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
-import { Menu, AccountCircle } from '@material-ui/icons';
+import { AppBar, Toolbar, IconButton, Typography, withStyles } from '@material-ui/core';
+import { AccountCircle } from '@material-ui/icons';
 import styled from 'styled-components';
 import NavSearch from './NavSearch/NavSearch';
 import { DataContext } from './../../DataContext/DataContext';
@@ -22,19 +22,19 @@ const StyledRightBar = styled.div`
     align-items: center;
 `
 
-const MenuContainer = styled(IconButton)`
-    margin-right: 16px !important;
-`
+const StyledTopNav = withStyles({
+    root: {
+        marginLeft: 240,
+        width: `calc(100% - ${240}px)`,
+    }
+})(AppBar);
 
 class TopNav extends Component {
     render() {
         return (
-            <AppBar position="static">
+            <StyledTopNav position="static">
                 <StyledToolbar>
                     <StyledLeftBar>
-                        <MenuContainer color="inherit">
-                            <Menu />
-                        </MenuContainer>
                         <Typography variant="h6" color="inherit" noWrap>
                             <DataContext.Consumer>
                                 {data => data.pages[0].title}
@@ -48,7 +48,7 @@ class TopNav extends Component {
                         </IconButton>
                     </StyledRightBar>
                 </StyledToolbar>
-            </AppBar>
+            </StyledTopNav>
         );
     }
 }
