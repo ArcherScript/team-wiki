@@ -31,7 +31,7 @@ class TopNav extends Component {
                     </IconButton>
                     <Typography variant="h6" color="inherit">
                         Title goes here
-                        </Typography>
+                    </Typography>
                     <AppSearchContainer theme={this.props.theme}>
                         <StyledIcon aria-label="Search">
                             <Search />
