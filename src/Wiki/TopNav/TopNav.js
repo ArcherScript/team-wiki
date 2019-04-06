@@ -3,6 +3,7 @@ import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
 import { Menu, AccountCircle } from '@material-ui/icons';
 import styled from 'styled-components';
 import NavSearch from './NavSearch/NavSearch';
+import { DataContext } from './../../DataContext/DataContext';
 
 const StyledToolbar = styled(Toolbar)`
     display: flex;
@@ -35,7 +36,9 @@ class TopNav extends Component {
                             <Menu />
                         </MenuContainer>
                         <Typography variant="h6" color="inherit" noWrap>
-                            Title goes here
+                            <DataContext.Consumer>
+                                {data => data.pages[0].title}
+                            </DataContext.Consumer>
                         </Typography>
                     </StyledLeftBar>
                     <StyledRightBar>

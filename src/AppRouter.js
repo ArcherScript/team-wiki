@@ -4,6 +4,7 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import Home from './Home/Home';
 import Wiki from './Wiki/Wiki';
 import data from './data.json';
+import DataProvider from './DataContext/DataContext';
 
 const theme = createMuiTheme({
     palette: {
@@ -23,10 +24,12 @@ const AppRouter = () => {
     return (
         <Router>
             <MuiThemeProvider theme={theme}>
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/Wiki" component={() => <Wiki theme={theme} />} />
-                </Switch>
+                <DataProvider>
+                    <Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/Wiki" component={Wiki} />
+                    </Switch>
+                </DataProvider>
             </MuiThemeProvider>
         </Router>
     );
