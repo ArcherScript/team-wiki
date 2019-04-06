@@ -12,7 +12,7 @@ class Wiki extends Component {
     render() {
         return (
             <WikiContainer>
-                <TopNav theme={this.props.theme} />
+                <TopNav />
             </WikiContainer>
         );
     }
