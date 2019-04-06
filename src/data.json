@@ -1,6 +1,9 @@
 {
     "title": "Foods",
-    "theme": {},
+    "theme": {
+      "primary": "#2196f3",
+      "secondary": "#FFFFFF"
+    },
     "home": {
       "logo": "https://cdn-images-1.medium.com/max/1600/1*nZgHhWUTYKXNVym_TKikgA.png",
       "footer": {

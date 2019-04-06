@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import styled from 'styled-components';
-import data from './data.json';
+import data from './../data.json';
 
 const HomeContainer = styled.div`
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
