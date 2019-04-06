@@ -20,7 +20,6 @@ const Image = styled.img`
 class Home extends Component {
   render() {
     const { home } = data
-    console.log(home);
     return (
       <HomeContainer>
         <Image src={home.logo} alt={"logo"} />
