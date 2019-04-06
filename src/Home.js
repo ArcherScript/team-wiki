@@ -12,7 +12,9 @@ const HomeContainer = styled.div`
 `
 
 const Image = styled.img`
-  margin-bottom: 25px;
+  margin-bottom: 50px;
+  width: 300px;
+  max-height: 300px;
 `
 
 class Home extends Component {
