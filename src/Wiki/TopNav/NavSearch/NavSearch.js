@@ -14,7 +14,7 @@ const NavSearchContainer = styled.div`
     background-color: ${props => props.theme.palette.primary.light};
     border-radius: ${props => props.theme.shape.borderRadius}px;
     margin-left: 12px;
-    margin-right: 16px;
+    margin-right: ${props => props.isDesktop ? "16px" : "0"};
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -27,7 +27,7 @@ const StyledIcon = styled(Icon)`
 class NavSearch extends Component {
     render() {
         return (
-            <NavSearchContainer theme={this.props.theme}>
+            <NavSearchContainer theme={this.props.theme} isDesktop={this.props.isDesktop}>
                 <StyledIcon aria-label="Search">
                     <Search />
                 </StyledIcon>

@@ -24,7 +24,7 @@ class DesktopProvider extends Component {
 
     render() {
         return (
-            <SizeContext.Provider value={ this.state.width > 1024 }>
+            <SizeContext.Provider value={ this.state.width > 500 }>
                 {this.props.children}
             </SizeContext.Provider>
         );
