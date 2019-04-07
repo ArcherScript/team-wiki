@@ -5,6 +5,7 @@ import Home from './Home/Home';
 import Wiki from './Wiki/Wiki';
 import data from './data.json';
 import DataProvider from './DataContext/DataContext';
+import SizeProvider from './SizeContext/SizeContext';
 
 const theme = createMuiTheme({
     palette: {
@@ -25,10 +26,12 @@ const AppRouter = () => {
         <Router>
             <MuiThemeProvider theme={theme}>
                 <DataProvider>
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/Wiki" component={Wiki} />
-                    </Switch>
+                    <SizeProvider>
+                        <Switch>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/Wiki" component={Wiki} />
+                        </Switch>
+                    </SizeProvider>
                 </DataProvider>
             </MuiThemeProvider>
         </Router>

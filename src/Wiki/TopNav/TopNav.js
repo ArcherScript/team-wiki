@@ -32,23 +32,23 @@ const StyledTopNav = withStyles({
 class TopNav extends Component {
     render() {
         return (
-            <StyledTopNav position="static">
-                <StyledToolbar>
-                    <StyledLeftBar>
-                        <Typography variant="h6" color="inherit" noWrap>
-                            <DataContext.Consumer>
-                                {data => data.pages[0].title}
-                            </DataContext.Consumer>
-                        </Typography>
-                    </StyledLeftBar>
-                    <StyledRightBar>
-                        <NavSearch />
-                        <IconButton color="inherit">
-                            <AccountCircle />
-                        </IconButton>
-                    </StyledRightBar>
-                </StyledToolbar>
-            </StyledTopNav>
+                <StyledTopNav position="static">
+                    <StyledToolbar>
+                        <StyledLeftBar>
+                            <Typography variant="h6" color="inherit" noWrap>
+                                <DataContext.Consumer>
+                                    {data => data.pages[0].title}
+                                </DataContext.Consumer>
+                            </Typography>
+                        </StyledLeftBar>
+                        <StyledRightBar>
+                            <NavSearch />
+                            <IconButton color="inherit">
+                                <AccountCircle />
+                            </IconButton>
+                        </StyledRightBar>
+                    </StyledToolbar>
+                </StyledTopNav>
         );
     }
 }
