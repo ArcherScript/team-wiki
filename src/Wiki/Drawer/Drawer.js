@@ -52,7 +52,7 @@ class Drawer extends Component {
                                     data.categories.map(category => {
                                         const pages = data.pages.filter(page => page.category === category.id);
                                         return (
-                                            <>
+                                            <React.Fragment key={category.id}>
                                                 <ListItem button onClick={() => this.togglePage()}>
                                                     <ListItemIcon><Book /></ListItemIcon>
                                                     <ListItemText>{category.name}</ListItemText>
@@ -62,16 +62,16 @@ class Drawer extends Component {
                                                     <List component="div" disablePadding>
                                                         {pages.map(page => {
                                                             return (
-                                                                <NestedListItem key={page.id} unit={this.props.theme.spacing.unit} inset button>
+                                                                <NestedListItem key={page.id} unit={this.props.theme.spacing.unit} button>
                                                                     <ListItemIcon><Bookmark /></ListItemIcon>
-                                                                    <ListItemText inset>{page.title}</ListItemText>
+                                                                    <ListItemText>{page.title}</ListItemText>
                                                                 </NestedListItem>
                                                             );
                                                         })
                                                         }
                                                     </List>
                                                 </Collapse>
-                                            </>
+                                            </React.Fragment>
                                         )
                                     })
                                 }

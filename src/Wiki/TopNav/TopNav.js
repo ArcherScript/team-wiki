@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, withStyles } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, withStyles } from '@material-ui/core';
 import { AccountCircle, Menu } from '@material-ui/icons';
 import styled from 'styled-components';
 import NavSearch from './NavSearch/NavSearch';
-import { DataContext } from './../../DataContext/DataContext';
 
 const StyledToolbar = styled(Toolbar)`
     display: flex;
@@ -45,11 +44,6 @@ const TopNavContent = (props) => {
         <StyledToolbar>
             <StyledLeftBar>
                 {!props.isDesktop && <MenuContainer color="inherit"><Menu /></MenuContainer>}
-                <Typography variant="h6" color="inherit" noWrap>
-                    {/* <DataContext.Consumer>
-                        {data => data.pages[0].title}
-                    </DataContext.Consumer> */}
-                </Typography>
             </StyledLeftBar>
             <StyledRightBar>
                 <NavSearch isDesktop={props.isDesktop}/>
