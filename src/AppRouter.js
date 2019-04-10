@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import Home from './Home/Home';
 import Wiki from './Wiki/Wiki';
@@ -27,10 +27,8 @@ const AppRouter = () => {
             <MuiThemeProvider theme={theme}>
                 <DataProvider>
                     <SizeProvider>
-                        <Switch>
-                            <Route path="/" exact component={Home} />
-                            <Route path="/Wiki" component={Wiki} />
-                        </Switch>
+                        <Route path="/" exact component={Home} />
+                        <Route path="/Wiki" component={Wiki} />
                     </SizeProvider>
                 </DataProvider>
             </MuiThemeProvider>
