@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Drawer as MuiDrawer, withStyles, List, ListItem, ListItemText, ListItemIcon, Collapse, withTheme } from '@material-ui/core';
-import {ExpandLess, ExpandMore, Book, Bookmark} from '@material-ui/icons';
+import { ExpandLess, ExpandMore, Book, Bookmark } from '@material-ui/icons';
 import styled from 'styled-components';
 import { DataContext } from './../../DataContext/DataContext';
 
@@ -25,17 +25,22 @@ class Drawer extends Component {
     constructor() {
         super();
         this.state = {
-            open: true,
+            pageOpen: true,
+            drawerOpen: false,
         }
     }
 
-    handleClick = () => {
-        this.setState({ open: !this.state.open })
+    togglePage = () => {
+        this.setState({ pageOpen: !this.state.pageOpen })
+    }
+
+    toggleDrawer = () => {
+        this.setState({ drawerOpen: !this.state.drawerOpen })
     }
 
     render() {
         return (
-            <StyledDrawer variant={this.props.isDesktop ? "permanent" : "temporary"}>
+            <StyledDrawer variant={this.props.isDesktop ? "permanent" : "temporary"} open={this.props.isDesktop ? true : this.state.drawerOpen}>
                 <DataContext.Consumer>
                     {data =>
                         <div>
@@ -45,19 +50,25 @@ class Drawer extends Component {
                             <List>
                                 {
                                     data.categories.map(category => {
+                                        const pages = data.pages.filter(page => page.category === category.id);
                                         return (
                                             <>
-                                                <ListItem button onClick={() => this.handleClick()}>
+                                                <ListItem button onClick={() => this.togglePage()}>
                                                     <ListItemIcon><Book /></ListItemIcon>
                                                     <ListItemText>{category.name}</ListItemText>
-                                                    {this.state.open ? <ExpandLess /> : <ExpandMore />}
+                                                    {this.state.pageOpen ? <ExpandLess /> : <ExpandMore />}
                                                 </ListItem>
-                                                <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+                                                <Collapse in={this.state.pageOpen} timeout="auto" unmountOnExit>
                                                     <List component="div" disablePadding>
-                                                        <NestedListItem key={"1"} unit={this.props.theme.spacing.unit} inset button>
-                                                            <ListItemIcon><Bookmark /></ListItemIcon>
-                                                            <ListItemText inset>Test</ListItemText>
-                                                        </NestedListItem>
+                                                        {pages.map(page => {
+                                                            return (
+                                                                <NestedListItem key={page.id} unit={this.props.theme.spacing.unit} inset button>
+                                                                    <ListItemIcon><Bookmark /></ListItemIcon>
+                                                                    <ListItemText inset>{page.title}</ListItemText>
+                                                                </NestedListItem>
+                                                            );
+                                                        })
+                                                        }
                                                     </List>
                                                 </Collapse>
                                             </>

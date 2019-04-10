@@ -19,21 +19,42 @@
     },
     "categories": [
       {
-        "id": "string",
-        "name": "food",
+        "id": "cat0",
+        "name": "Pork",
+        "showInDrawer": true
+      },
+      {
+        "id": "cat1",
+        "name": "Chicken",
         "showInDrawer": true
       }
     ],
     "pages": [
       {
-        "id": "string",
-        "category": "categoryId",
+        "id": "string0",
+        "category": "cat0",
         "title": "Hot dog",
         "description": "The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich",
         "articles": [
           "articleId0",
           "articleId1"
         ],
+        "style": {}
+      },
+      {
+        "id": "string1",
+        "category": "cat0",
+        "title": "Porkchop",
+        "description": "a loin cut taken perpendicularly to the spine of the pig and usually containing a rib or part of a vertebra.",
+        "articles": [],
+        "style": {}
+      },
+      {
+        "id": "string2",
+        "category": "cat1",
+        "title": "Chicken Noodle",
+        "description": "Chicken soup is a soup made from chicken, simmered in water, usually with various other ingredients.",
+        "articles": [],
         "style": {}
       }
     ],
