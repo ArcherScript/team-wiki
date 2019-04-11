@@ -43,7 +43,7 @@ const TopNavContent = (props) => {
     return (
         <StyledToolbar>
             <StyledLeftBar>
-                {!props.isDesktop && <MenuContainer color="inherit"><Menu /></MenuContainer>}
+                {!props.isDesktop && <MenuContainer onClick={props.toggleDrawer} color="inherit"><Menu /></MenuContainer>}
             </StyledLeftBar>
             <StyledRightBar>
                 <NavSearch isDesktop={props.isDesktop}/>
@@ -62,7 +62,7 @@ class TopNav extends Component {
                 </StyledTopNav>
                 :
                 <AppBar position="static">
-                    <TopNavContent />
+                    <TopNavContent toggleDrawer={this.props.toggleDrawer}/>
                 </AppBar>
         );
     }

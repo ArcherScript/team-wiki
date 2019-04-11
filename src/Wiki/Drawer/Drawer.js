@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Drawer as MuiDrawer, withStyles, List, ListItem, ListItemText, ListItemIcon, Collapse, withTheme } from '@material-ui/core';
 import { ExpandLess, ExpandMore, Book, Bookmark } from '@material-ui/icons';
 import styled from 'styled-components';
@@ -25,22 +25,17 @@ class Drawer extends Component {
     constructor() {
         super();
         this.state = {
-            pageOpen: true,
-            drawerOpen: false,
+            categoryOpen: 0,
         }
     }
 
-    togglePage = () => {
-        this.setState({ pageOpen: !this.state.pageOpen })
-    }
-
-    toggleDrawer = () => {
-        this.setState({ drawerOpen: !this.state.drawerOpen })
+    togglePage = (categoryId) => {
+        this.setState({ categoryOpen: categoryId })
     }
 
     render() {
         return (
-            <StyledDrawer variant={this.props.isDesktop ? "permanent" : "temporary"} open={this.props.isDesktop ? true : this.state.drawerOpen}>
+            <StyledDrawer variant={this.props.isDesktop ? "permanent" : "temporary"} open={this.props.drawerOpen} onClose={this.props.toggleDrawer}>
                 <DataContext.Consumer>
                     {data =>
                         <div>
@@ -51,14 +46,15 @@ class Drawer extends Component {
                                 {
                                     data.categories.map(category => {
                                         const pages = data.pages.filter(page => page.category === category.id);
+                                        const tabOpen = this.state.categoryOpen === category.id;
                                         return (
-                                            <React.Fragment key={category.id}>
-                                                <ListItem button onClick={() => this.togglePage()}>
+                                            <Fragment key={category.id}>
+                                                <ListItem button onClick={() => this.togglePage(category.id)}>
                                                     <ListItemIcon><Book /></ListItemIcon>
                                                     <ListItemText>{category.name}</ListItemText>
-                                                    {this.state.pageOpen ? <ExpandLess /> : <ExpandMore />}
+                                                    {tabOpen ? <ExpandLess /> : <ExpandMore />}
                                                 </ListItem>
-                                                <Collapse in={this.state.pageOpen} timeout="auto" unmountOnExit>
+                                                <Collapse in={tabOpen} timeout="auto" unmountOnExit>
                                                     <List component="div" disablePadding>
                                                         {pages.map(page => {
                                                             return (
@@ -71,7 +67,7 @@ class Drawer extends Component {
                                                         }
                                                     </List>
                                                 </Collapse>
-                                            </React.Fragment>
+                                            </Fragment>
                                         )
                                     })
                                 }

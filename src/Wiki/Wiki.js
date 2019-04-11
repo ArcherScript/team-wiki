@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import Drawer from './Drawer/Drawer';
 import TopNav from './TopNav/TopNav';
@@ -11,10 +11,12 @@ const WikiContainer = styled.div`
 
 const Wiki = () => {
     const isDesktop = useContext(SizeContext);
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
     return (
         <WikiContainer>
-            <Drawer isDesktop={isDesktop} />
-            <TopNav isDesktop={isDesktop} />
+            <Drawer isDesktop={isDesktop} drawerOpen={drawerOpen} toggleDrawer={() => setDrawerOpen(!drawerOpen)}/>
+            <TopNav isDesktop={isDesktop} toggleDrawer={() => setDrawerOpen(!drawerOpen)} />
         </WikiContainer>
     );
 }
