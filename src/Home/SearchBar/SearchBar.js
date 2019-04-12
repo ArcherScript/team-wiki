@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Paper, InputBase, IconButton } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
+import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled(Paper)`
@@ -20,14 +21,15 @@ const Icon = styled(IconButton)`
 `
 
 const SearchBar = (props) => {
+  const [searchVal, setSearchVal] = useState('');
   return (
     <Container elevation={1}>
-      <StyledInput {...props} autoComplete={"test"} />
-      <Icon aria-label="Search">
+      <StyledInput placeholder={props.placeholder} autoComplete={"test"} onChange={(event) => setSearchVal(event.target.value)}/>
+      <Icon aria-label="Search" onClick={() => props.history.push(`Wiki?page=${searchVal}`)}>
         <Search />
       </Icon>
     </Container>
   );
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
