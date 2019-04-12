@@ -5,8 +5,7 @@ import PageTabs from './PageTabs/PageTabs'
 
 const CategoryTabs = (props) => {
     const { categories, pages } = props;
-
-    const [categoryOpen, setCategory] = useState(props.pages[0].id);
+    const [categoryOpen, setCategory] = useState(props.categories[0].id);
 
     return (
         categories.map(category => {

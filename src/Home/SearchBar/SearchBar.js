@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Paper, InputBase, IconButton } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import styled from 'styled-components';
@@ -19,17 +19,15 @@ const Icon = styled(IconButton)`
   padding: 10px;
 `
 
-class SearchBar extends Component {
-    render() {
-        return (
-            <Container elevation={1}>
-                <StyledInput {...this.props} />
-                <Icon aria-label="Search">
-                    <Search />
-                </Icon>
-            </Container>
-        );
-    }
+const SearchBar = (props) => {
+  return (
+    <Container elevation={1}>
+      <StyledInput {...props} autoComplete={"test"} />
+      <Icon aria-label="Search">
+        <Search />
+      </Icon>
+    </Container>
+  );
 }
 
 export default SearchBar;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import styled from 'styled-components';
 import data from './../data.json';
@@ -17,16 +17,14 @@ const Image = styled.img`
   max-height: 300px;
 `
 
-class Home extends Component {
-  render() {
-    const { home } = data
-    return (
-      <HomeContainer>
-        <Image src={home.logo} alt={"logo"} />
-        <SearchBar placeholder={`Search ${data.title} Wiki`} autoFocus />
-      </HomeContainer>
-    );
-  }
+const Home = () => {
+  const { home } = data
+  return (
+    <HomeContainer>
+      <Image src={home.logo} alt={"logo"} />
+      <SearchBar placeholder={`Search ${data.title} Wiki`} autoFocus />
+    </HomeContainer>
+  );
 }
 
 export default Home;
