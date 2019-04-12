@@ -23,14 +23,12 @@ const Drawer = (props) => {
         <StyledDrawer variant={props.isDesktop ? "permanent" : "temporary"} open={props.drawerOpen} onClose={props.toggleDrawer}>
             <DataContext.Consumer>
                 {data =>
-                    <>
+                    <List>
                         <DrawerLogoContainer>
                             <DrawerLogo src={data.home.logo} />
                         </DrawerLogoContainer>
-                        <List>
-                            <CategoryTabs categories={data.categories} pages={data.pages} />
-                        </List>
-                    </>
+                        <CategoryTabs categories={data.categories} pages={data.pages} />
+                    </List>
                 }
             </DataContext.Consumer>
         </StyledDrawer>
