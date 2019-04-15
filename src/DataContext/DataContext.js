@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import data from './../data.json';
 
 export const DataContext = React.createContext();
 
-class DataProvider extends Component {
-    render() {
+const DataProvider = (props) => {
         return (
             <DataContext.Provider value={data}>
-                {this.props.children}
+                {props.children}
             </DataContext.Provider>
         );
-    }
 }
 
 export default DataProvider;

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { InputBase, Icon, withStyles, withTheme } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
 import styled from 'styled-components';
 
-// .-.
 const StyledInput = withStyles({
     root: {
         color: "inherit",

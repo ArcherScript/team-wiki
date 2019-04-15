@@ -1,34 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 export const SizeContext = React.createContext();
 
-class DesktopProvider extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { width: window.innerWidth, height: window.innerHeight };
-        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+const DesktopProvider = (props) => {
+    const [width, setWidth] = useState(window.innerWidth);
+    
+    const updateWindowDimensions = () => {
+        setWidth(window.innerWidth);
     }
 
-    componentDidMount() {
-        this.updateWindowDimensions();
-        window.addEventListener('resize', this.updateWindowDimensions);
-    }
+    window.addEventListener('resize', updateWindowDimensions);
 
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
-    }
-
-    updateWindowDimensions() {
-        this.setState({ width: window.innerWidth, height: window.innerHeight });
-    }
-
-    render() {
-        return (
-            <SizeContext.Provider value={ this.state.width > 500 }>
-                {this.props.children}
-            </SizeContext.Provider>
-        );
-    }
+    return (
+        <SizeContext.Provider value={width > 500}>
+            {props.children}
+        </SizeContext.Provider>
+    );
 }
 
 export default DesktopProvider;
