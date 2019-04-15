@@ -24,17 +24,15 @@ const StyledIcon = styled(Icon)`
     padding: 0 12px;
 `
 
-class NavSearch extends Component {
-    render() {
-        return (
-            <NavSearchContainer theme={this.props.theme} isDesktop={this.props.isDesktop}>
-                <StyledIcon aria-label="Search">
-                    <Search />
-                </StyledIcon>
-                <StyledInput placeholder="Search..." />
-            </NavSearchContainer>
-        );
-    }
+const NavSearch = (props) => {
+    return (
+        <NavSearchContainer theme={props.theme} isDesktop={props.isDesktop}>
+            <StyledIcon aria-label="Search">
+                <Search />
+            </StyledIcon>
+            <StyledInput placeholder="Search..." />
+        </NavSearchContainer>
+    );
 }
 
 export default withTheme()(NavSearch);
