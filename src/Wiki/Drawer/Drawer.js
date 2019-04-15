@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Drawer as MuiDrawer, withStyles, List } from '@material-ui/core';
 import styled from 'styled-components';
 import CategoryTabs from './CategoryTabs/CategoryTabs';
@@ -19,18 +19,15 @@ const DrawerLogoContainer = styled.div`
 `
 
 const Drawer = (props) => {
+    const data = useContext(DataContext);
     return (
         <StyledDrawer variant={props.isDesktop ? "permanent" : "temporary"} open={props.drawerOpen} onClose={props.toggleDrawer}>
-            <DataContext.Consumer>
-                {data =>
-                    <List>
-                        <DrawerLogoContainer>
-                            <DrawerLogo src={data.home.logo} />
-                        </DrawerLogoContainer>
-                        <CategoryTabs categories={data.categories} pages={data.pages} />
-                    </List>
-                }
-            </DataContext.Consumer>
+            <List>
+                <DrawerLogoContainer>
+                    <DrawerLogo src={data.home.logo} />
+                </DrawerLogoContainer>
+                <CategoryTabs categories={data.categories} pages={data.pages} />
+            </List>
         </StyledDrawer>
     );
 }
