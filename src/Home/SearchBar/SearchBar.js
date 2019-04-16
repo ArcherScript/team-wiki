@@ -1,11 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Paper, InputBase, IconButton } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
-import {withRouter} from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled(Paper)`
-  padding: 2px 4px;
   display: flex;
   align-items: center;
   width: 80%;
@@ -21,15 +19,14 @@ const Icon = styled(IconButton)`
 `
 
 const SearchBar = (props) => {
-  const [searchVal, setSearchVal] = useState('');
   return (
     <Container elevation={1}>
-      <StyledInput placeholder={props.placeholder} autoComplete={"test"} onChange={(event) => setSearchVal(event.target.value)}/>
-      <Icon aria-label="Search" onClick={() => props.history.push(`Wiki?page=${searchVal}`)}>
+      <StyledInput placeholder={props.placeholder} onChange={(event) => props.onChange(event)}/>
+      <Icon aria-label="Search" onClick={() => props.onClick()} disabled={props.disabled}>
         <Search />
       </Icon>
     </Container>
   );
 }
 
-export default withRouter(SearchBar);
+export default SearchBar;
