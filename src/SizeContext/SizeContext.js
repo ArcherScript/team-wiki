@@ -12,7 +12,7 @@ const DesktopProvider = (props) => {
     window.addEventListener('resize', updateWindowDimensions);
 
     return (
-        <SizeContext.Provider value={width > 500}>
+        <SizeContext.Provider value={width > 600}>
             {props.children}
         </SizeContext.Provider>
     );

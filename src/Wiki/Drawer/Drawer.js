@@ -3,6 +3,7 @@ import { Drawer as MuiDrawer, withStyles, List } from '@material-ui/core';
 import styled from 'styled-components';
 import CategoryTabs from './CategoryTabs/CategoryTabs';
 import { DataContext } from './../../DataContext/DataContext';
+import {SizeContext} from './../../SizeContext/SizeContext';
 
 const StyledDrawer = withStyles({
     paper: {
@@ -20,8 +21,9 @@ const DrawerLogoContainer = styled.div`
 
 const Drawer = (props) => {
     const data = useContext(DataContext);
+    const isDesktop = useContext(SizeContext);
     return (
-        <StyledDrawer variant={props.isDesktop ? "permanent" : "temporary"} open={props.drawerOpen} onClose={props.toggleDrawer}>
+        <StyledDrawer variant={isDesktop ? "permanent" : "temporary"} open={props.drawerOpen} onClose={props.toggleDrawer}>
             <List>
                 <DrawerLogoContainer>
                     <DrawerLogo src={data.home.logo} />
