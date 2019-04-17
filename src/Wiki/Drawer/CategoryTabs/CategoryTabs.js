@@ -27,13 +27,13 @@ const CategoryTabs = (props) => {
             const tabOpen = categoryOpen === category.id;
             return (
                 <Fragment key={category.id}>
-                    <ListItem button onClick={() => setCategory(category.id)}>
+                    <CategoryTab button onClick={() => setCategory(category.id)}>
                         <TabTitle>
                             <ListItemIcon><Book fontSize="small" /></ListItemIcon>
                             <Typography variant="subtitle1">{category.name}</Typography>
                         </TabTitle>
                         {tabOpen ? <ExpandLess /> : <ExpandMore />}
-                    </ListItem>
+                    </CategoryTab>
                     <Collapse in={tabOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
                             <PageTabs pages={categoryPages} />
