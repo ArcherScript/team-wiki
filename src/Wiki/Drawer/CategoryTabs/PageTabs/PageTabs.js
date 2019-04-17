@@ -1,10 +1,8 @@
 import React from 'react';
-import { ListItem, ListItemText, ListItemIcon, withTheme } from '@material-ui/core';
-import { Bookmark } from '@material-ui/icons';
+import { ListItem, ListItemText, withTheme } from '@material-ui/core';
 import styled from 'styled-components';
 
 const NestedListItem = styled(ListItem)`
-    padding-left: ${props => props.unit * 4}px !important;
 `
 
 const PageTabs = (props) => {
@@ -12,8 +10,7 @@ const PageTabs = (props) => {
     return (
         pages.map(page => {
             return (
-                <NestedListItem key={page.id} unit={props.theme.spacing.unit} button>
-                    <ListItemIcon><Bookmark /></ListItemIcon>
+                <NestedListItem key={page.id} dense unit={props.theme.spacing.unit} button>
                     <ListItemText>{page.title}</ListItemText>
                 </NestedListItem>
             );
