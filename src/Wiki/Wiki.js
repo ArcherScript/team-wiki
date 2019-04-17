@@ -14,8 +14,8 @@ const Wiki = () => {
 
     return (
         <WikiContainer>
-            <Drawer drawerOpen={drawerOpen} toggleDrawer={() => setDrawerOpen(!drawerOpen)}/>
             <TopNav toggleDrawer={() => setDrawerOpen(!drawerOpen)} />
+            <Drawer drawerOpen={drawerOpen} toggleDrawer={() => setDrawerOpen(!drawerOpen)}/>
             <Content />
         </WikiContainer>
     );
