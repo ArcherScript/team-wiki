@@ -3,6 +3,7 @@ import { ListItem, ListItemText, withTheme } from '@material-ui/core';
 import styled from 'styled-components';
 
 const NestedListItem = styled(ListItem)`
+    padding-left: 32px !important;
 `
 
 const PageTabs = (props) => {

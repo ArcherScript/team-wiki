@@ -8,14 +8,8 @@ const CategoryTab = styled(ListItem)`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 24px !important;
 `
-
-const TabTitle = styled.div`
-    display: flex;
-    flex: 1;
-    align-items: center;
-`
-
 
 const CategoryTabs = (props) => {
     const { categories, pages } = props;
@@ -27,12 +21,8 @@ const CategoryTabs = (props) => {
             const tabOpen = categoryOpen === category.id;
             return (
                 <Fragment key={category.id}>
-                    <CategoryTab button onClick={() => setCategory(category.id)}>
-                        <TabTitle>
-                            <ListItemIcon><Book fontSize="small" /></ListItemIcon>
-                            <Typography variant="subtitle1">{category.name}</Typography>
-                        </TabTitle>
-                        {tabOpen ? <ExpandLess /> : <ExpandMore />}
+                    <CategoryTab dense button onClick={() => setCategory(category.id)}>
+                            <Typography variant="subtitle2">{category.name}</Typography>
                     </CategoryTab>
                     <Collapse in={tabOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
