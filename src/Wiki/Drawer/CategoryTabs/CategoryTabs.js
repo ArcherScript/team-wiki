@@ -1,6 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { List, ListItem, ListItemIcon, Collapse, Typography } from '@material-ui/core';
-import { ExpandLess, ExpandMore, Book } from '@material-ui/icons';
+import { List, ListItem, Collapse, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import PageTabs from './PageTabs/PageTabs'
 

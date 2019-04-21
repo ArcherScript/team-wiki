@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Typography, withTheme } from '@material-ui/core';
+import queryString from 'query-string';
 import { SizeContext } from './../../SizeContext/SizeContext';
 import { DataContext } from './../../DataContext/DataContext';
 
@@ -14,13 +15,17 @@ const ContentContainer = styled.div`
     box-sizing: border-box;
 `
 
+const queryPage = queryString.parse(window.location.search);
+
 const Content = (props) => {
     const isDesktop = useContext(SizeContext);
     const data = useContext(DataContext);
+    const currentPage = data.pages.filter(page => page.title === queryPage.page)[0];
+
     return (
         <ContentContainer isDesktop={isDesktop}>
             <Typography variant="h2">
-                {data.pages[0].title}
+                {currentPage.title}
             </Typography>
         </ContentContainer>
     );
