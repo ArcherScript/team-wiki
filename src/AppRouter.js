@@ -6,6 +6,7 @@ import Wiki from './Wiki/Wiki';
 import data from './data.json';
 import DataProvider from './DataContext/DataContext';
 import SizeProvider from './SizeContext/SizeContext';
+import PageProvider from './PageContext/PageContext';
 
 const theme = createMuiTheme({
     palette: {
@@ -27,8 +28,10 @@ const AppRouter = () => {
             <MuiThemeProvider theme={theme}>
                 <DataProvider>
                     <SizeProvider>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/Wiki" component={Wiki} />
+                        <PageProvider>
+                            <Route path="/" exact component={Home} />
+                            <Route path="/Wiki" component={Wiki} />
+                        </PageProvider>
                     </SizeProvider>
                 </DataProvider>
             </MuiThemeProvider>

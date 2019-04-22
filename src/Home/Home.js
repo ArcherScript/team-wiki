@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import Fuse from 'fuse.js';
 import { Paper, MenuItem } from '@material-ui/core'
 import styled from 'styled-components';
-import { withRouter } from 'react-router-dom';
 import SearchBar from './SearchBar/SearchBar';
 import { DataContext } from './../DataContext/DataContext';
 
@@ -52,7 +51,7 @@ const Home = (props) => {
   }
 
   const navigateWiki = (pageLink) => {
-    props.history.push(`Wiki?page=${pageLink}`)
+    window.location = `${window.location}Wiki?page=${pageLink}`
   }
 
   const autoSuggestClick = (autoSuggestion) => {
@@ -81,4 +80,4 @@ const Home = (props) => {
   );
 }
 
-export default withRouter(Home);
+export default Home;
