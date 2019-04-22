@@ -4,9 +4,9 @@ import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
 import Home from './Home/Home';
 import Wiki from './Wiki/Wiki';
 import data from './data.json';
-import DataProvider from './DataContext/DataContext';
-import SizeProvider from './SizeContext/SizeContext';
-import PageProvider from './PageContext/PageContext';
+import DataProvider from './Contexts/DataContext/DataContext';
+import SizeProvider from './Contexts/SizeContext/SizeContext';
+import PageProvider from './Contexts/PageContext/PageContext';
 
 const theme = createMuiTheme({
     palette: {

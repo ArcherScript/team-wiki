@@ -3,7 +3,7 @@ import Fuse from 'fuse.js';
 import { Paper, MenuItem } from '@material-ui/core'
 import styled from 'styled-components';
 import SearchBar from './SearchBar/SearchBar';
-import { DataContext } from './../DataContext/DataContext';
+import { DataContext } from './../Contexts/DataContext/DataContext';
 
 const fuseOptions = {
   shouldSort: true,

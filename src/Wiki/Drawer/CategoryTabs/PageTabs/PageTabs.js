@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { ListItem, ListItemText, Typography, withTheme } from '@material-ui/core';
+import { ListItem, Typography, withTheme } from '@material-ui/core';
 import styled from 'styled-components';
-import { PageContext } from './../../../../PageContext/PageContext';
+import { PageContext } from './../../../../Contexts/PageContext/PageContext';
 
 const NestedListItem = styled(ListItem)`
     padding-left: 32px !important;

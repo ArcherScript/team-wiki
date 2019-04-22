@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Typography, withTheme } from '@material-ui/core';
-import { PageContext } from './../../PageContext/PageContext';
-import { SizeContext } from './../../SizeContext/SizeContext';
+import { PageContext } from './../../Contexts/PageContext/PageContext';
+import { SizeContext } from './../../Contexts/SizeContext/SizeContext';
 
 const ContentContainer = styled.div`
     display: flex;
@@ -18,7 +18,7 @@ const ContentContainer = styled.div`
 const Content = (props) => {
     const isDesktop = useContext(SizeContext);
     const currentPage = useContext(PageContext);
-    
+
     return (
         <ContentContainer isDesktop={isDesktop}>
             <Typography variant="h2">

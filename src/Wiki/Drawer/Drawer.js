@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import { Drawer as MuiDrawer, withStyles, List, Divider, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import CategoryTabs from './CategoryTabs/CategoryTabs';
-import { DataContext } from './../../DataContext/DataContext';
-import { SizeContext } from './../../SizeContext/SizeContext';
+import { DataContext } from './../../Contexts/DataContext/DataContext';
+import { SizeContext } from './../../Contexts/SizeContext/SizeContext';
 
 const StyledDrawer = withStyles({
     paper: {

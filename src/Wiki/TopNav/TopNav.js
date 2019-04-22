@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { AppBar, withStyles } from '@material-ui/core';
 import TopNavContent from './TopNavContent/TopNavContent';
-import {SizeContext} from './../../SizeContext/SizeContext';
+import {SizeContext} from './../../Contexts/SizeContext/SizeContext';
 
 const StyledTopNav = withStyles({
     root: {

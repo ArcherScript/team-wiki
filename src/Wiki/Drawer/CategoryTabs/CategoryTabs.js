@@ -2,7 +2,7 @@ import React, { useState, Fragment, useContext } from 'react';
 import { List, ListItem, Collapse, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import PageTabs from './PageTabs/PageTabs'
-import { PageContext } from './../../../PageContext/PageContext';
+import { PageContext } from './../../../Contexts/PageContext/PageContext';
 
 const CategoryTab = styled(ListItem)`
     display: flex;
