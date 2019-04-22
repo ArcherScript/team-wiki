@@ -28,8 +28,8 @@ const AppRouter = () => {
             <MuiThemeProvider theme={theme}>
                 <DataProvider>
                     <SizeProvider>
+                        <Route path="/" exact component={Home} />
                         <PageProvider>
-                            <Route path="/" exact component={Home} />
                             <Route path="/Wiki" component={Wiki} />
                         </PageProvider>
                     </SizeProvider>
