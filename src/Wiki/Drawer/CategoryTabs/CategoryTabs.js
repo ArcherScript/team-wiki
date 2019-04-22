@@ -1,7 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import { List, ListItem, Collapse, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import PageTabs from './PageTabs/PageTabs'
+import { PageContext } from './../../../PageContext/PageContext';
 
 const CategoryTab = styled(ListItem)`
     display: flex;
@@ -12,7 +13,8 @@ const CategoryTab = styled(ListItem)`
 
 const CategoryTabs = (props) => {
     const { categories, pages } = props;
-    const [categoryOpen, setCategory] = useState(props.categories[0].id);
+    const currentPage = useContext(PageContext);
+    const [categoryOpen, setCategory] = useState(currentPage.category);
 
     return (
         categories.map(category => {
@@ -21,7 +23,7 @@ const CategoryTabs = (props) => {
             return (
                 <Fragment key={category.id}>
                     <CategoryTab dense button onClick={() => setCategory(category.id)}>
-                            <Typography variant="subtitle2">{category.name}</Typography>
+                        <Typography variant="subtitle2">{category.name}</Typography>
                     </CategoryTab>
                     <Collapse in={tabOpen} timeout="auto" unmountOnExit>
                         <List component="div" disablePadding>
