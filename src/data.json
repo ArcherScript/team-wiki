@@ -35,7 +35,7 @@
         "id": "string0",
         "category": "cat0",
         "title": "Hot dog",
-        "description": "The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich",
+        "description": "The hot dog or dog (also spelled hotdog) is a grilled or steamed link-sausage sandwich.",
         "articles": [
           "articleId0",
           "articleId1"
@@ -46,7 +46,7 @@
         "id": "string1",
         "category": "cat0",
         "title": "Porkchop",
-        "description": "a loin cut taken perpendicularly to the spine of the pig and usually containing a rib or part of a vertebra.",
+        "description": "A loin cut taken perpendicularly to the spine of the pig and usually containing a rib or part of a vertebra.",
         "articles": [],
         "style": {}
       },
@@ -61,7 +61,7 @@
     ],
     "articles": [
       {
-        "id": "string",
+        "id": "articleId0",
         "title": "History",
         "content": [
           {
