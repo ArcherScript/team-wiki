@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { withTheme, Typography } from '@material-ui/core';
+import { withTheme } from '@material-ui/core';
 import ContentHeader from './ContentHeader/ContentHeader';
+import ContentBody from './ContentBody/ContentBody';
 import { PageContext } from './../../Contexts/PageContext/PageContext';
 import { SizeContext } from './../../Contexts/SizeContext/SizeContext';
 import { DataContext } from './../../Contexts/DataContext/DataContext';
@@ -24,13 +25,18 @@ const Content = (props) => {
     const currentPage = useContext(PageContext);
     const data = useContext(DataContext);
 
-    const articles = data.articles.filter(article => currentPage.articles.filter(pageArticle => pageArticle.id === article.id));
+    const articles = currentPage.articles.map(pageArticle => {
+        return (
+            data.articles.filter(article => article.id === pageArticle)[0]
+        )
+    }).filter(article => article !== undefined)
+
     return (
         <ContentContainer isDesktop={isDesktop}>
             <ContentHeader title={currentPage.title} description={currentPage.description} />
-            <Typography variant="h6">
-                {articles[0].title}
-            </Typography>
+            {!!articles.length &&
+            <ContentBody articles={articles} />
+            }
         </ContentContainer>
     );
 };
