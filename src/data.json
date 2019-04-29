@@ -55,7 +55,9 @@
         "category": "cat1",
         "title": "Chicken Noodle",
         "description": "Chicken soup is a soup made from chicken, simmered in water, usually with various other ingredients.",
-        "articles": [],
+        "articles": [
+          "articleId2"
+        ],
         "style": {}
       }
     ],
@@ -63,19 +65,19 @@
       {
         "id": "articleId0",
         "title": "History",
-        "content": [
-          {
-            "id": "string",
-            "widget": "widgetId",
-            "position": {
-              "x": 0,
-              "y": 0
-            },
-            "data": {
-              "text": "The word 'frankfurter' comes from Frankfurt, Germany, where pork sausages similar to hot dogs originated."
-            }
-          }
-        ],
+        "description": "The word 'frankfurter' comes from Frankfurt, Germany, where pork sausages similar to hot dogs originated.  It can also refer to the sausage (the wurst or wörst) of its composition itself. The sausage used is the wiener (Vienna sausage) or frankfurter (also frank). The names of these sausages also commonly refer to their assembled sandwiches.",
+        "style": {}
+      },
+      {
+        "id": "articleId1",
+        "title": "Etymology",
+        "description": "The term dog has been used as a synonym for sausage since the 1800s, with one thought being that it came from accusations that sausage makers used dog meat, starting in at least 1845. In the early 20th century, consumption of dog meat in Germany was common.  The suspicion that sausages contained dog meat was \"occasionally justified\".",
+        "style": {}
+      },
+      {
+        "id": "articleId2",
+        "title": "Preparation",
+        "description": "Variations on the flavor are gained by adding root vegetables such as parsnip, potato, sweet potato and celery root, herbs such as parsley, dill, other vegetables such as zucchini, whole garlic cloves or tomatoes and black pepper. The soup should be brought slowly to a boil and then simmered in a covered pot on a very low flame for one to three hours, adding water if necessary. A clearer broth is achieved by skimming the drops of fat off the top of the soup as it is cooking, first bringing the chicken to boil from a pot of cold water and discarding the water before continuing, or straining it through a strainer or cheesecloth. Saffron or turmeric are sometimes added as a yellow colorant. Then, the chicken can be shredded by hand and stored in the refrigerator until ready for use in the soup.",
         "style": {}
       }
     ],
