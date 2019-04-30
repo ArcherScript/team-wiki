@@ -51,7 +51,8 @@ const Home = (props) => {
   }
 
   const navigateWiki = (pageLink) => {
-    window.location = `${window.location}Wiki?page=${pageLink}`
+    let encodedPageLink = encodeURIComponent(pageLink);
+    window.location = `${window.location}Wiki?page=${encodedPageLink}`
   }
 
   const autoSuggestClick = (autoSuggestion) => {

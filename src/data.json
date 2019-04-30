@@ -28,6 +28,11 @@
         "id": "cat1",
         "name": "Chicken",
         "showInDrawer": true
+      },
+      {
+        "id": "cat2",
+        "name": "Vegan",
+        "showInDrawer": true
       }
     ],
     "pages": [
@@ -58,6 +63,14 @@
         "articles": [
           "articleId2"
         ],
+        "style": {}
+      },
+      {
+        "id": "string3",
+        "category": "cat2",
+        "title": "PB&J",
+        "description": "A peanut butter and jelly (or jam) sandwich, or PB&J, includes one or more layers of peanut butter and one or more layers of jelly (called jam in British English and Canadian English) or jam on bread.",
+        "articles": [],
         "style": {}
       }
     ],
