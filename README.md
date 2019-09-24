@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Team-Wiki
+## A completely data driven wiki site
 
-## Available Scripts
+# Build a single JSON file and that's it!
 
-In the project directory, you can run:
+Team-wiki was designed so that it's easy to create, or generate new wiki pages. <br> <br>
+Just add to the JSON file, and that's it.
 
-### `npm start`
+# JSON Documentation
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## title
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Title is the title of the wiki. <br> 
+If you are making a wiki about `Food` your title should probably be `Food` or `Foods`
 
-### `npm test`
+## theme
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is the color scheme of your wiki. The font color will automatically set based off of the theme.<br>
 
-### `npm run build`
+### `primary`
+By default it's set to &nbsp; ![#2196f3](https://placehold.it/15/2196f3/000000?text=+) `#2196f3`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `secondary`
+By default it's set to &nbsp; ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) `#FFFFFF`
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## home
+Home is the landing page of your wiki site. The search bar searches through your list of pages, and will automatically navigate you to the page you have searched for. <br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `logo`
+This is the url for the image you want to show up above the search bar on the home page.
+### `footer`
+<u>Not yet implemented</u>
 
-### `npm run eject`
+## categories
+Categories are sections, that you can put your pages under. Similar to how you would put your files in a folder if you wanted to organize it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `id`
+Each category needs a unique identifier, so that the pages know which category they belong to.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `name`
+The name of your category.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `showInDrawer`
+Whether or not you wish to show the category in the side drawer.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## pages
+These are the actual pages of your wiki site. You may have a page for Hot Dogs, or Porkchops.
 
-## Learn More
+### `id`
+Each page needs a unique identifier, so that the articles know which page they belong to.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `category`
+This is the category Id that the page belongs to.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `title`
+The title of your wiki page.
 
-### Code Splitting
+### `description`
+The description of your wiki page, this will show up as a subheader of the page.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### `style`
+<u>Not Yet Implemented</u>
 
-### Analyzing the Bundle Size
+## articles
+Articles are the content that you wish to be displayed inside of your wiki page.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### `id`
+The unique identifier of your article, these have no use as of right now. When widgets are implemented, they will be the unique identifier for widgets.
 
-### Making a Progressive Web App
+### `title`
+The title of your article, or a header for your content.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### `description`
+The actual content of your article, currently only accepts strings.
 
-### Advanced Configuration
+### `style`
+<u>Not Yet Implemented</u>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## widgets
+<u>Not yet implemented</u>
